@@ -1,0 +1,20 @@
+virtualenv --python=python3.6 bizinfo
+
+cd bizinfo
+
+source ./bin/activate
+
+deactivate
+
+pip3 install -r requirements.txt
+
+pip3 install slacker
+
+crontab -e 
+---
+30 13 * * * /home/mediadevicelab/bizinfo/run.sh azure
+---
+crontab -l
+sudo service cron restart | start | status
+
+sudo service cron status
